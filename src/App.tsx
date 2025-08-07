@@ -1,16 +1,15 @@
-import './App.css'
 import {client} from "./shared/api/client.ts";
 import {useQuery} from "@tanstack/react-query";
 import {useEffect, useState} from "react";
 
 function App() {
 
-    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
         setInterval(()=>{
             setIsVisible(prev => !prev);
-        }, 5000)
+        }, 10000)
     }, []);
 
     return (
@@ -23,7 +22,7 @@ function App() {
 
 const Playlists = () => {
     const query = useQuery({
-        staleTime: Infinity,
+        //gcTime: 10 * 1000,
         queryKey: ['playlists'],
         queryFn: () => client.GET('/playlists')
     })
