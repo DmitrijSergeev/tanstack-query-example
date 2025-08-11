@@ -1,8 +1,8 @@
-import {client} from "./shared/api/client.ts";
+import {client} from "../shared/api/client.ts";
 import {useQuery} from "@tanstack/react-query";
 import {useEffect, useState} from "react";
 
-function App() {
+export function PlaylistsPage() {
 
     const [isVisible, setIsVisible] = useState(true);
 
@@ -20,7 +20,7 @@ function App() {
     )
 }
 
-const Playlists = () => {
+export const Playlists = () => {
     const query = useQuery({
         //gcTime: 10 * 1000,
         queryKey: ['playlists'],
@@ -37,4 +37,3 @@ const Playlists = () => {
     </div>
 }
 
-export default App
