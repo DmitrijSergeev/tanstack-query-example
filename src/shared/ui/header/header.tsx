@@ -1,5 +1,5 @@
 import type {ReactNode} from "react";
-import s from 'header.module.css'
+import s from './header.module.css'
 import {Link} from "@tanstack/react-router";
 
 type Props = {
@@ -20,6 +20,7 @@ export const Header = ({renderAccountBar}: Props) => {
                         temp tanstack query page
                     </Link>
                 </div>
+                <div>{renderAccountBar()}</div>
             </div>
         </header>
     );

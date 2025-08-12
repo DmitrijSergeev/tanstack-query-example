@@ -2,7 +2,7 @@ import {client} from "../shared/api/client.ts";
 import {useQuery} from "@tanstack/react-query";
 import {useEffect, useState} from "react";
 
-export function PlaylistsPage() {
+export function PlaylistsPages() {
 
     const [isVisible, setIsVisible] = useState(true);
 
